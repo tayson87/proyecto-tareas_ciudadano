@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Home</title>
+
+	<div th:insert="~{fragments/libsExtern :: cnd-libs}"></div>
+
+</head>
+
+<body class="min-h-100 bg-gray-200">
+	<!--   Componente fragment inyectado aqui  -->
+	<div th:insert="~{fragments/navbarFragment :: navbar-principal}"></div>
+
+	<div class=" container-fluid ">
+		<main class="w-md-60 w-xl-80 px-5 py-10 bg-gray-200">
+
+			<div class="flex flex-col mt-10">
+				<div class="py-2 overflow-x-auto">
+					<!-- Contenido principal -->
+					<div class="container mt-4">
+						<div class="jumbotron" style="margin-top: 160px;">
+							<h1 class="display-4">Bienvenido a EastView</h1>
+							<p class="lead">Descubre la belleza de nuestro pueblo.</p>
+							<hr class="my-4">
+							<p>Explora las maravillas que EastView tiene para ofrecer.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+	</div>
+
+	</main>
+	</div>
+	
+	<div th:insert="~{fragments/scriptFragment :: script-comun}"></div>
+</body>
+
+</html>

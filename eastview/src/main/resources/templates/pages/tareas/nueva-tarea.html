@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Nueva Tarea</title>
+
+	<div th:insert="~{fragments/libsExtern :: cnd-libs}"></div>
+
+</head>
+
+<body class="min-h-100 bg-gray-200">
+	<!--   Componente fragment inyectado aqui  -->
+	<div th:insert="~{fragments/navbarFragment :: navbar-principal}"></div>
+
+	<div style="margin-top:  110px;">
+		<main class="container-md container-xl px-5 py-10 bg-gray-200">
+			<h2 class="display-6 text-center fw-light text-primary">Crear Tarea</h2>
+
+			<div
+				class="shadow container-fluid p-3 mb-5 bg-body rounded border border-secondary">
+				<form id="tareaForm">
+					<div
+						class="container-fluid row d-flex align-items-center">
+						<div class="col-md-6" style="margin-top: 42px;">
+							<label for="exampleInputEmail1"
+								class="form-label">Tarea</label>
+							<input type="text" class="form-control"
+								id="tareaNombre"
+								aria-describedby="emailHelp" required>
+							<div id="emailHelp" class="form-text">Describe la tarea a realizar.</div>
+						</div>
+						<div class="col-md-6" style="margin-top: 42px;">
+							<label for="exam1" class="form-label">Dia de la semana</label>
+							<input type="text" class="form-control"
+								id="diaSemana"
+								aria-describedby="emailHelp" required>
+							<div id="emailHelp" class="form-text">Asigna un dia para ejecutar la tarea.</div>
+						</div>
+						<div class="row">
+							<div class="col-12 d-flex justify-content-end"
+								> 
+								<button
+									type="submit" class="btn btn-primary">Crear</button>
+							</div>
+						</div>
+					</div>
+
+				</form>
+			</div>
+
+		</main>
+	</div>
+
+
+	<script th:src="@{/js/tareas/nuevaTarea.js}"></script>
+	<div th:insert="~{fragments/scriptFragment :: script-comun}"></div>
+</body>
+
+</html>

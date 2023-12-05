@@ -1,0 +1,46 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head th:insert="Components/header :: header-principal"></head>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/login/registro.css}" />
+
+    <body>
+
+        <div class="row ">
+            <div class="col-12 d-flex justify-content-center " style="padding-top: 120px;">
+                <form class="form" th:action="@{/signup}" th:object="${usuario}"
+                    method="post">
+                    <p class="title">Registro</p>
+                    <p class="message">Regístrate ahora y obtén acceso completo
+                        a nuestra aplicación.</p>
+                    <div class="flex">
+                        <label>
+                            <input class="input" type="text"
+                                th:field="*{nombre}" placeholder required>
+                            <span>Nombre</span>
+                        </label>
+
+                    </div>
+                    <label>
+                        <input class="input" type="email" th:field="*{email}"
+                            placeholder required>
+                        <span>Correo electrónico</span>
+                    </label>
+                    <label>
+                        <input class="input" type="password"
+                            th:field="*{password}" placeholder required>
+                        <span>Contraseña</span>
+                    </label>
+                    <button class="submit" type="submit">Enviar</button>
+                    <p class="signin">¿Ya tienes una cuenta? <a href="#">Iniciar
+                            sesión</a> </p>
+
+                    <button id="salir-button" onclick="window.location.href='/app/home'">En otro momento</button>
+                </form>
+
+            </div>
+
+        </div> <!-- /container -->
+
+        <div th:insert="Components/script :: scripts-principal"></div>
+    </body>
+</html>

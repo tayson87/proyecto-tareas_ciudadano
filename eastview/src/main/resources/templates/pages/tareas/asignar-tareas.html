@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Tablero Tareas</title>
+
+	<div th:insert="~{fragments/libsExtern :: cnd-libs}"></div>
+	<style>
+		.center {
+			text-align: center;
+		}
+	</style>
+</head>
+
+<body class="min-h-100 bg-gray-200">
+	<!--   Componente fragment inyectado aqui  -->
+	<div th:insert="~{fragments/navbarFragment :: navbar-principal}"></div>
+
+	<div class=" container-fluid ">
+		<main class="w-md-60 w-xl-80 px-5 py-10 bg-gray-200">
+
+			<div class="mt-5" sec:authorize="isAuthenticated()">
+				<h3 style="color: rgb(63, 64, 65);">Asignacion de Tareas</h3>
+                <h5>Asigna una tarea a un ciudadano</h5>
+                <h5>Asigna una tarea a varios ciudadanos</h5>
+			</div>
+
+			<div sec:authorize="isAuthenticated()" class="flex flex-col mt-10">
+				<div class="py-2 overflow-x-auto">
+					<div
+						class="align-middle inline-block min-w-full shadow overflow-hidden sm:rounded-lg border-b border-gray-200">
+						<div class="card-body">
+							<div class="container-fluid row d-flex mt-4">
+								<div class="col-6">
+
+									<select id="selectTareas" class="form-select" size="3"
+										aria-label="size 3 select example">
+									</select>
+									<div class="container mt-4">
+										<h3>Tareas Seleccionadas</h3>
+										<ul id="opcionesSeleccionadas" class="list-group"></ul>
+									</div>
+
+								</div>
+								<div class="col-6">
+									<!-- Nuevo select de ciudadanos -->
+									<select id="selectCiudadanos" class="form-select" size="3"
+										aria-label="size 3 select example">
+										<!-- Aquí puedes agregar las opciones manualmente o cargarlas dinámicamente -->
+									</select>
+									<!-- Sección para mostrar ciudadanos seleccionados -->
+									<div class="container mt-4">
+										<h3>Ciudadanos Seleccionados</h3>
+										<ul id="ciudadanosSeleccionados" class="list-group"></ul>
+									</div>
+								</div>
+							</div>
+
+                            <div class="container-fluid row d-flex mt-5">
+                                <div class="col-12 d-flex justify-content-end">
+                                    <button class="btn btn-success" id="btnEnviar" onclick="enviarRelacionesAlServidor()">Asignar Tareas</button>
+
+                                </div>
+                            </div>
+						</div>
+					</div>
+				</div>
+			</div>
+	</div>
+
+	</main>
+	</div>
+	<div th:insert="~{fragments/scriptFragment :: script-comun}"></div>
+	<script th:src="@{/js/tareas/asignarTareas.js}"></script>
+
+</body>
+
+</html>

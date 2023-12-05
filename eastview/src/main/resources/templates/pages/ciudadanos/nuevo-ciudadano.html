@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Nuevo Ciudadano</title>
+        <div th:insert="~{fragments/libsExtern :: cnd-libs}"></div>
+    </head>
+    <body class="min-h-100 bg-gray-200">
+
+        <div th:insert="~{fragments/navbarFragment :: navbar-principal}"></div>
+
+        <div style="margin-top:  110px;">
+            <main class="container-md container-xl px-5 py-10 bg-gray-200">
+                <h2 class="display-6 text-center fw-light text-primary">Nuevo
+                    Ciudadano</h2>
+
+                <div
+                    class="shadow container-fluid p-3 mb-5 bg-body rounded border border-secondary">
+                    <form id="ciudadanoForm">
+                        <div
+                            class="container-fluid row g-3 d-flex align-items-center">
+                            <div class="col-auto" style="margin-top: 42px;">
+                                <label for="exampleInputEmail1"
+                                    class="form-label">Nombre</label>
+                                <input type="text" class="form-control"
+                                    id="nombreCiudadano"
+                                    aria-describedby="emailHelp" required>
+                                <div id="emailHelp" class="form-text">Escribe el
+                                    nombre del ciudadano.</div>
+                            </div>
+                            <div class="col-auto" style="margin-top: 42px;">
+                                <label for="exam1" class="form-label">Edad</label>
+                                <input type="number" class="form-control"
+                                    id="edadCiudadano"
+                                    aria-describedby="emailHelp" required>
+                                <div id="emailHelp" class="form-text">Puedes
+                                    escribir una edad.</div>
+                            </div>
+                            <div class="col-auto">
+                                <label for="exampleInputEmail1"
+                                    class="form-label">Selecciona Sexo</label>
+                                <select class="form-select"
+                                    aria-label="Default select example" id="selectSexo" required>
+                                  
+                                    <option value="1">Masculino</option>
+                                    <option value="2">Femenino</option>
+                                    <option value="2">Mayate</option>
+                                </select>
+                            </div>
+                            <div class="col-auto">
+                                <label for="exampleInputEmail1"
+                                    class="form-label">Asignale tareas existentes al
+                                    ciudano</label>
+                                <select class="form-select"
+                                id="selectTareas"
+                                    aria-label="Default select example">
+                                    <option selected>Lista de Tareas</option>
+
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 d-flex justify-content-end"
+                                style="margin-right: 47px;"> 
+                                <button
+                                    type="submit" class="btn btn-primary">Crear</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+            </main>
+        </div>
+        <script th:src="@{/js/nuevociudadano.js}"></script>
+        <div th:insert="~{fragments/scriptFragment :: script-comun}"></div>
+
+    </body>
+</html>
